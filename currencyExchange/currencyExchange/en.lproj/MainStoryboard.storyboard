@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Main Currency Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="JMSMainCurrencyController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cez-ng-11G">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="x6h-ds-VVr"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="fQs-zR-Ra7"/>
+                                    <outlet property="delegate" destination="2" id="L2d-O5-iYZ"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjc-NN-eNl">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="jYI-Wk-CRp"/>
+                                    <constraint firstAttribute="height" constant="44" id="t5O-wZ-E0k"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Currency Converter">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="19" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SyH-kk-idG">
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="uO2-ex-P1N"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Please your initial currency amount. Press convert amount to convert from US Dollar amount or select from options below your countries currency.</string>
+                                        <attributes>
+                                            <color key="NSBackgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="USD United States Dollar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-Rx-8ln">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="wgC-DY-3oX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="4s2-sw-CAu">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="B35-Su-ZhN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="ZHB-Hh-uRF"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdO-VZ-pqt">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Lvc-ly-MfE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Convert Amount">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submit:" destination="2" eventType="touchUpInside" id="WT0-4V-7qK"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyJ-wl-9YW">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Bnx-2C-9x9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4s2-sw-CAu" firstAttribute="top" secondItem="SyH-kk-idG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="19e-Ef-dJ2"/>
+                            <constraint firstItem="Cez-ng-11G" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="2Ig-CV-a4C"/>
+                            <constraint firstItem="qdO-VZ-pqt" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="C5q-o1-AFV"/>
+                            <constraint firstItem="dyJ-wl-9YW" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DJV-iy-Xmd"/>
+                            <constraint firstItem="dyJ-wl-9YW" firstAttribute="top" secondItem="PhY-Rx-8ln" secondAttribute="top" type="default" id="FDx-DG-EN1"/>
+                            <constraint firstItem="kjc-NN-eNl" firstAttribute="leading" secondItem="SyH-kk-idG" secondAttribute="leading" type="default" id="Gmy-tK-tNp"/>
+                            <constraint firstItem="SyH-kk-idG" firstAttribute="centerX" secondItem="Cez-ng-11G" secondAttribute="centerX" type="default" id="KKh-QK-r8h"/>
+                            <constraint firstItem="qdO-VZ-pqt" firstAttribute="leading" secondItem="4s2-sw-CAu" secondAttribute="leading" type="default" id="P6s-p5-quI"/>
+                            <constraint firstAttribute="trailing" secondItem="PhY-Rx-8ln" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="RFy-d4-Eo1"/>
+                            <constraint firstItem="Cez-ng-11G" firstAttribute="top" secondItem="3" secondAttribute="top" constant="199" id="Ubh-Sx-Ek4"/>
+                            <constraint firstItem="PhY-Rx-8ln" firstAttribute="top" secondItem="4s2-sw-CAu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Unt-Bs-hVO"/>
+                            <constraint firstItem="Cez-ng-11G" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Ycy-CU-6wc"/>
+                            <constraint firstItem="kjc-NN-eNl" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="br9-vc-gQO"/>
+                            <constraint firstItem="SyH-kk-idG" firstAttribute="trailing" secondItem="kjc-NN-eNl" secondAttribute="trailing" type="default" id="f0t-gz-RhH"/>
+                            <constraint firstItem="4s2-sw-CAu" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="84" id="h9n-VM-Yv6"/>
+                            <constraint firstItem="qdO-VZ-pqt" firstAttribute="trailing" secondItem="4s2-sw-CAu" secondAttribute="trailing" type="default" id="mtX-rT-qAi"/>
+                            <constraint firstItem="SyH-kk-idG" firstAttribute="top" secondItem="3" secondAttribute="top" constant="35" id="q6j-SE-eRm"/>
+                            <constraint firstItem="dyJ-wl-9YW" firstAttribute="bottom" secondItem="PhY-Rx-8ln" secondAttribute="bottom" type="default" id="trQ-pc-WSd"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="Submit" destination="qdO-VZ-pqt" id="RsN-ot-I6i"/>
+                        <outlet property="amount" destination="4s2-sw-CAu" id="SGn-vI-uGI"/>
+                        <outlet property="baseCurrency" destination="Cez-ng-11G" id="U43-GW-7UM"/>
+                        <outlet property="flag" destination="dyJ-wl-9YW" id="B8d-wB-moa"/>
+                        <outlet property="selectedCurrency" destination="PhY-Rx-8ln" id="2SQ-V9-oBM"/>
+                        <segue destination="I5Z-OH-ijH" kind="modal" identifier="pushData" modalTransitionStyle="flipHorizontal" id="pPz-6E-TDw"/>
+                        <segue destination="lrU-O9-r1j" kind="unwind" identifier="rootUnwind" unwindAction="goToRoot:" id="shR-U6-KJb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <exit id="lrU-O9-r1j" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-298" y="601"/>
+        </scene>
+        <!--Display Exchange View Controller-->
+        <scene sceneID="VF5-6t-J13">
+            <objects>
+                <viewController wantsFullScreenLayout="YES" id="I5Z-OH-ijH" customClass="JMSDisplayExchangeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O45-85-aVv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Currency Exchanges from:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikg-2d-fk6">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="ID3-7s-PxH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="K0k-Cl-mxx">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="Lvu-mG-J2I"/>
+                                    <constraint firstAttribute="width" constant="246" id="zSo-2y-teP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Ld-Sk-EOh">
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="377" id="0os-0a-SGG"/>
+                                    <constraint firstAttribute="width" constant="280" id="NvL-Mc-Bo4"/>
+                                </constraints>
+                                <color key="separatorColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="exchangeData" selectionStyle="blue" indentationWidth="10" reuseIdentifier="exchangeData" rowHeight="43" id="W7F-fi-MAC" customClass="JMSDataCell">
+                                        <rect key="frame" x="0.0" y="46" width="280" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="260" height="42"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="currency" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="G6o-jp-fRY">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="151" id="gOt-R2-otD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" restorationIdentifier="flag" translatesAutoresizingMaskIntoConstraints="NO" id="bjb-BD-xLq">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="QMt-7x-jte"/>
+                                                        <constraint firstAttribute="width" constant="32" id="ecn-Sp-5Uy"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="amount" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="sVB-Ci-net">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="73" id="pNj-cM-ltZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="G6o-jp-fRY" firstAttribute="baseline" secondItem="sVB-Ci-net" secondAttribute="baseline" type="default" id="4NE-dl-t7D"/>
+                                            <constraint firstItem="bjb-BD-xLq" firstAttribute="leading" secondItem="W7F-fi-MAC" secondAttribute="leading" constant="10" id="Dah-EJ-a54"/>
+                                            <constraint firstItem="G6o-jp-fRY" firstAttribute="top" secondItem="sVB-Ci-net" secondAttribute="top" type="default" id="U1k-2o-RBC"/>
+                                            <constraint firstItem="bjb-BD-xLq" firstAttribute="top" secondItem="W7F-fi-MAC" secondAttribute="top" constant="11" id="dqu-9r-W53"/>
+                                            <constraint firstAttribute="trailing" secondItem="sVB-Ci-net" secondAttribute="trailing" constant="10" id="soS-Pd-Nc4"/>
+                                            <constraint firstItem="G6o-jp-fRY" firstAttribute="top" secondItem="bjb-BD-xLq" secondAttribute="top" type="default" id="soZ-1H-9JZ"/>
+                                            <constraint firstItem="G6o-jp-fRY" firstAttribute="leading" secondItem="bjb-BD-xLq" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="stI-V0-ibs"/>
+                                            <constraint firstItem="G6o-jp-fRY" firstAttribute="bottom" secondItem="bjb-BD-xLq" secondAttribute="bottom" type="default" id="wcs-st-nvb"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="amount" destination="sVB-Ci-net" id="X3o-wD-hkq"/>
+                                            <outlet property="exchangeCurrency" destination="G6o-jp-fRY" id="QUN-Wr-Kdt"/>
+                                            <outlet property="flag" destination="bjb-BD-xLq" id="Wjp-Bn-dqe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="I5Z-OH-ijH" id="QQj-do-Saf"/>
+                                    <outlet property="delegate" destination="I5Z-OH-ijH" id="163-CO-unj"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EjU-IC-mg9">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="OFb-dY-uY5"/>
+                                    <constraint firstAttribute="height" constant="21" id="ibX-eI-Mch"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzr-Bq-yP8">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="7B1-Rw-QWD"/>
+                                    <constraint firstAttribute="height" constant="17" id="9TS-Lx-JCh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="I5Z-OH-ijH" eventType="touchUpInside" id="VzE-MF-PZW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EjU-IC-mg9" firstAttribute="top" secondItem="O45-85-aVv" secondAttribute="top" constant="55" id="1kU-La-w1z"/>
+                            <constraint firstItem="Ikg-2d-fk6" firstAttribute="top" secondItem="O45-85-aVv" secondAttribute="top" constant="20" symbolic="YES" type="default" id="5bP-lP-4jg"/>
+                            <constraint firstItem="lzr-Bq-yP8" firstAttribute="leading" secondItem="O45-85-aVv" secondAttribute="leading" type="default" id="8gE-if-idR"/>
+                            <constraint firstItem="K0k-Cl-mxx" firstAttribute="leading" secondItem="EjU-IC-mg9" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="KR3-qZ-IPm"/>
+                            <constraint firstItem="lzr-Bq-yP8" firstAttribute="top" secondItem="O45-85-aVv" secondAttribute="top" constant="20" symbolic="YES" type="default" id="SCw-m7-Ttr"/>
+                            <constraint firstItem="9Ld-Sk-EOh" firstAttribute="leading" secondItem="O45-85-aVv" secondAttribute="leading" constant="12" id="eT9-Km-GnV"/>
+                            <constraint firstItem="K0k-Cl-mxx" firstAttribute="top" secondItem="O45-85-aVv" secondAttribute="top" constant="54" id="vsa-1t-t6e"/>
+                            <constraint firstItem="9Ld-Sk-EOh" firstAttribute="top" secondItem="O45-85-aVv" secondAttribute="top" constant="110" id="vyy-vT-dge"/>
+                            <constraint firstItem="Ikg-2d-fk6" firstAttribute="trailing" secondItem="9Ld-Sk-EOh" secondAttribute="trailing" type="default" id="wo8-u0-Ccb"/>
+                            <constraint firstItem="EjU-IC-mg9" firstAttribute="leading" secondItem="O45-85-aVv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xxQ-oA-mh6"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="segueISOFlag" destination="EjU-IC-mg9" id="hgM-76-al8"/>
+                        <outlet property="userBaseCurrency" destination="K0k-Cl-mxx" id="QLp-cF-HZG"/>
+                        <segue destination="b60-6e-nBM" kind="unwind" identifier="displayExchangeUnwind" unwindAction="unwindFromPushDataSegue:" id="itZ-MY-xHa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odI-5r-YYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="b60-6e-nBM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="271" y="493"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="JMSDataCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JMSDataCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="amount" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="exchangeCurrency" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="flag" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="JMSDisplayExchangeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JMSDisplayExchangeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButton:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="segueISOFlag" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userBaseCurrency" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="JMSMainCurrencyController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JMSMainCurrencyController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="Submit" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="amount" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="baseCurrency" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="flag" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="selectedCurrency" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="symbol" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
